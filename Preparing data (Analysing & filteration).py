@@ -160,7 +160,7 @@ for year in years:
                 pass
          
 
-# Ran at 10: 25               
+              
 print count_articles_filtered 
 print count_total_articles                     
 print count_main_not_exist
@@ -230,9 +230,6 @@ dataframe_read = pd.read_pickle('/Users/Dinesh/Documents/Project Stock predictio
 
 
 
-
-
-
 #################################################################################
 
 # Filtering rows
@@ -243,29 +240,6 @@ dataframe_read = pd.read_pickle('/Users/Dinesh/Documents/Project Stock predictio
 #NYTimes_data["response"]["docs"][1:2][0]['pub_date']
      
 
-
-year = 2015
-month = 3
-file_str = '/Users/Dinesh/Documents/Project Stock predictions/data/nytimes/' + str(year) + '-' + '{:02}'.format(month) + '.json'
-list_type_of_material = []
-list_news_desk = []
-list_section_name = []
-with open(file_str) as data_file:    
-    NYTimes_data = json.load(data_file)
-for i in range(len(NYTimes_data["response"]["docs"][:])):
-    if NYTimes_data["response"]["docs"][:][i]['type_of_material'] in list_type_of_material:
-        pass
-    else:
-        list_type_of_material.append(NYTimes_data["response"]["docs"][:][i]['type_of_material'])
-    if NYTimes_data["response"]["docs"][:][i]['news_desk'] in list_news_desk:
-        pass
-    else:
-        list_news_desk.append(NYTimes_data["response"]["docs"][:][i]['news_desk'])
-    if NYTimes_data["response"]["docs"][:][i]['section_name'] in list_section_name:
-        pass
-    else:
-        list_section_name.append(NYTimes_data["response"]["docs"][:][i]['section_name'])
-      
 #    articles_dict = { your_key: NYTimes_data["response"]["docs"][:][i][your_key] for your_key in dict_keys }
 #    try:
 #        articles_dict['headline'] = articles_dict['headline']['main'] # Selecting just 'main' from headline
@@ -277,33 +251,13 @@ for i in range(len(NYTimes_data["response"]["docs"][:])):
 #        pass
 
 
-count = 0
-count_exception = 0
-for i in range(len(NYTimes_data["response"]["docs"][:])):
-    if any(substring in NYTimes_data["response"]["docs"][:][i]['type_of_material'].lower() for substring in type_of_material_list):
-        try:
-            if any(substring in NYTimes_data["response"]["docs"][:][i]['section_name'].lower() for substring in news_desk_list):
-                count += 1
-                #print NYTimes_data["response"]["docs"][:][i]['section_name'].lower()
-        except AttributeError:
-            count_exception += 1
-            pass
-print count
-print count_exception
-        
-        
-2014-08-31 00:00:00
-2015-03-09 00:00:00
-2015-03-10 00:00:00
-2015-11-05 00:00:00
-2015-11-06 00:00:00
         
 # Find out articles with less number of articles
-for date, row in interpolated_df.T.iteritems():   
-    if len(interpolated_df.loc[date, 'articles']) < 300:
-        print interpolated_df.loc[date, 'articles']
-        print date
-            
+# for date, row in interpolated_df.T.iteritems():   
+#     if len(interpolated_df.loc[date, 'articles']) < 300:
+#         print interpolated_df.loc[date, 'articles']
+#         print date
+           
             
             
             
