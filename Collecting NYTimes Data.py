@@ -77,12 +77,5 @@ for year in years:
             json.dump(mydict, fout)
         fout.close()
         
-#with open('/Users/Dinesh/Documents/Project Stock predictions/data/json1.json') as data_file:    
-#    data = json.load(data_file)
-        
 
-
-#mydict = mydict["response"]["docs"][:][:]
-#mydict["response"]["docs"][1:2][0]['lead_paragraph']    
-#mydict["response"]["docs"][100:101][0]['lead_paragraph']
     
