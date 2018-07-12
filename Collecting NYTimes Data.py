@@ -5,18 +5,17 @@ Created on Mon Mar 20 00:10:29 2017
 
 @author: Dinesh
 """
+# Below part is not required
 ########## News API ########################################################
-from newsapi import NewsAPI
+# from newsapi import NewsAPI
 
-key = '96af62a035db45bda517a9ca62a25ac3'
-params = {}
-api = NewsAPI(key)
-sources = api.sources(params)
-articles = api.articles(sources[0]['id'], params)
+# key = '96af62a035db45bda517a9ca62a25ac3'
+# params = {}
+# api = NewsAPI(key)
+# sources = api.sources(params)
+# articles = api.articles(sources[0]['id'], params)
 
 ################ NY Times API #############################################
-
-
 import sys, csv, json
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -62,8 +61,8 @@ class ArchiveAPI(object):
         r = requests.get(url)
         return r.json()
 
-
-api = ArchiveAPI('0ba6dc04a8cb44e0a890c00df88c393a')
+# Please your own key below
+api = ArchiveAPI(key)
 
 
 years = [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007]
